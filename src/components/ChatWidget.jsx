@@ -10,12 +10,12 @@ KEY INFORMATION:
 - Core Stack: JavaScript, TypeScript, Python, SQL, React, Next.js, Node.js, Flask, PostgreSQL, Docker.
 - Experience: Automation, AI-powered applications, high-performance web solutions.
 - Projects:
-  1. Discord Automation Bots: 20K+ members, 50+ servers, Python/PostgreSQL.
-  2. Gemini AI Media Generator: Integrates Gemini 3 Pro with Discord, 1000+ images/week.
-  3. Email Automation System: 60K emails/month, 99% uptime, Flask/SMTP.
-  4. TikTok Data Scraper: 100+ profiles/min, 5x faster, Python/Selenium.
-  5. Reddit Lead Scraper: Automated outreach, Python/Flask.
-  6. EMS Dental E-commerce: Full-stack Next.js app with PayMongo.
+  1. Discord Automation Bots: 15,000+ members, 40+ servers, Python/PostgreSQL.
+  2. Gemini AI Media Generator: Integrates Gemini 3 Pro with Discord, 1,000+ images/week.
+  3. Email Automation System: ~2,000 automated emails daily (~60K/month), 99% uptime, Flask/SMTP, saving ~$300/month.
+  4. TikTok Data Scraper: 100+ profiles/min, 5x faster, reduced memory from 1.8GB to 450MB, Python/Selenium.
+  5. Reddit Lead Scraper: Hundreds of leads per run, automated outreach, Python/Flask.
+  6. EMS Dental E-commerce: Full-stack Next.js app with PayMongo and RAG-powered AI assistant.
 
 STYLE:
 - Tone: Professional, fast-paced, result-oriented, helpful, and concise.

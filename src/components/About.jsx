@@ -80,7 +80,7 @@ function About() {
                         </p>
                         <p>
                             My approach combines modern AI-assisted development tools like Cursor and
-                            Antigravity with solid software principles to ship faster than the average developer.
+                            Antigravity with software principles to ship faster than the average developer.
                         </p>
 
                         <div className="about-stats">

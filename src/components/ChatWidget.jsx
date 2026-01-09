@@ -115,7 +115,8 @@ function ChatWidget() {
                 onClick={() => setIsOpen(true)}
                 aria-label="Open AI Chat"
             >
-                <MessageSquare size={24} />
+                <MessageSquare size={20} />
+                <span className="chat-toggle-text">Ask me anything</span>
             </button>
 
             {/* Chat Window */}

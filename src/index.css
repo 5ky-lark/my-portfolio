@@ -1571,13 +1571,12 @@ a:hover {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  width: 60px;
-  height: 60px;
-  background: var(--gradient-primary);
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
   border-radius: var(--radius-full);
+  padding: 0.75rem 1.25rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.5rem;
   color: white;
   border: none;
   cursor: pointer;
@@ -1585,11 +1584,31 @@ a:hover {
   z-index: 9999;
   transition: all var(--transition-base);
   animation: float 6s ease-in-out infinite;
+  font-weight: 500;
+  font-size: 0.875rem;
 }
 
 .chat-toggle:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   box-shadow: 0 6px 30px rgba(14, 165, 233, 0.6);
+}
+
+.chat-toggle-text {
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .chat-toggle-text {
+    display: none;
+  }
+
+  .chat-toggle {
+    padding: 1rem;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    justify-content: center;
+  }
 }
 
 .chat-window {

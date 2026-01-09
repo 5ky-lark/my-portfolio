@@ -907,7 +907,7 @@ a:hover {
 
 .experience-date {
   font-size: 0.875rem;
-  color: rgba(148, 163, 184, 0.9);
+  color: rgba(226, 232, 240, 1);
   background: rgba(14, 165, 233, 0.1);
   padding: 0.25rem 0.75rem;
   border-radius: var(--radius-full);

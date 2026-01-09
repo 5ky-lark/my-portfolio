@@ -913,6 +913,10 @@ a:hover {
   border-radius: var(--radius-full);
 }
 
+[data-theme="light"] .experience-date {
+  color: rgba(51, 65, 85, 1);
+}
+
 .experience-description {
   list-style: none;
 }

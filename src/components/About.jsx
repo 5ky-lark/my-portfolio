@@ -76,7 +76,7 @@ function About() {
                         <p>
                             I'm a Full Stack Developer based in the Philippines, currently working remotely
                             for 8MB LLC (Zagged) in Delaware, USA. I specialize in building automation
-                            systems, AI-powered applications, and high-performance web solutions.
+                            systems, AI-powered systems, and high-performance web solutions.
                         </p>
                         <p>
                             My approach combines modern AI-assisted development tools like Cursor and

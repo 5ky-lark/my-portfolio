@@ -558,6 +558,7 @@ a:hover {
     right: 0.75rem;
     transform: none;
     padding: 0.625rem 1rem;
+    min-width: auto;
   }
 
   .navbar-content {

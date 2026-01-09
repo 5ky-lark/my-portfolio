@@ -47,15 +47,7 @@ function Navbar() {
                         onClick={toggleTheme}
                         aria-label="Toggle theme"
                     >
-                        {isDark ? <Sun size={20} /> : <Moon size={20} />}
-                    </button>
-
-                    <button
-                        className="navbar-toggle"
-                        onClick={() => setIsMobileOpen(!isMobileOpen)}
-                        aria-label="Toggle menu"
-                    >
-                        {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
+                        {isDark ? <Sun size={18} /> : <Moon size={18} />}
                     </button>
                 </div>
             </div>

@@ -29,7 +29,7 @@ function Navbar() {
     return (
         <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
             <div className="navbar-content">
-                <a href="#" className="navbar-logo">SM</a>
+                <a href="#" className="navbar-logo">SKY</a>
 
                 <ul className={`navbar-links ${isMobileOpen ? 'active' : ''}`}>
                     {navLinks.map(link => (

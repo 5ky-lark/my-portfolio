@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 
 const techStack = {
     languages: ['JavaScript', 'TypeScript', 'Python', 'SQL'],
-    frontend: ['React', 'Next.js', 'Tailwind CSS'],
+    frontend: ['React', 'Next.js', 'Vite', 'Tailwind CSS'],
     backend: ['Node.js', 'Express.js', 'Flask', 'FastAPI'],
     database: ['PostgreSQL', 'SQLite', 'Supabase'],
     devops: ['Docker', 'Railway', 'Render', 'Vercel'],

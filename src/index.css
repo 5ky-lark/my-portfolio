@@ -551,36 +551,37 @@ a:hover {
 }
 
 /* Mobile navbar - Inline links, no burger */
+/* Mobile navbar - Inline links, no burger */
 @media (max-width: 768px) {
   .navbar {
     top: 0.75rem;
-    left: 0.75rem;
-    right: 0.75rem;
+    left: 0.5rem;
+    right: 0.5rem;
     transform: none;
-    padding: 0.625rem 1rem;
+    padding: 0.5rem 0.75rem;
     min-width: auto;
   }
 
   .navbar.scrolled {
-    padding: 0.625rem 1rem;
+    padding: 0.5rem 0.75rem;
   }
 
   .navbar-content {
-    gap: 0.5rem;
+    gap: 0.25rem;
     justify-content: space-between;
     width: 100%;
   }
 
   .navbar-logo {
-    font-size: 1rem;
-    padding-right: 0.5rem;
+    font-size: 0.9rem;
+    padding-right: 0.35rem;
     border-right: 1px solid rgba(148, 163, 184, 0.2);
   }
 
   /* Force mobile links to be visible and inline */
   .navbar-links {
     display: flex !important;
-    gap: 0.5rem;
+    gap: 0.25rem;
     flex: 1;
     justify-content: center;
     position: static !important;
@@ -593,13 +594,15 @@ a:hover {
     box-shadow: none !important;
     width: auto !important;
     height: auto !important;
+    min-width: 0;
   }
 
   .navbar-links a {
-    font-size: 0.65rem;
-    letter-spacing: 0.2px;
+    font-size: 0.6rem;
+    letter-spacing: 0px;
     padding: 0.25rem 0.25rem;
     color: var(--text-secondary);
+    white-space: nowrap;
   }
 
   /* Ensure active state doesn't shift things */
@@ -614,13 +617,13 @@ a:hover {
   }
 
   .navbar-actions {
-    padding-left: 0.5rem;
+    padding-left: 0.35rem;
     border-left: 1px solid rgba(148, 163, 184, 0.2);
   }
 
   .theme-toggle {
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
   }
 }
 

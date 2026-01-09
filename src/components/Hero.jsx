@@ -34,9 +34,9 @@ function Hero() {
                 </p>
 
                 <div className="hero-buttons">
-                    <a href="/SKYLARK_MAGSILANG_UPDATED_CV.pdf" download className="btn btn-primary">
+                    <a href="/SKYLARK_MAGSILANG_UPDATED_CV.pdf" download="SKYLARK_MAGSILANG_CV.pdf" className="btn btn-primary">
                         <Download size={20} />
-                        Download Resume
+                        Download CV
                     </a>
                     <a href="https://github.com/5ky-lark" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
                         <Github size={20} />

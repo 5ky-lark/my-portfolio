@@ -1865,3 +1865,13 @@ a:hover {
     line-height: 1.2;
   }
 }
+
+/* Experience Section Metrics Highlight */
+.experience-description strong {
+  color: var(--primary-400);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(56, 189, 248, 0.5);
+  font-weight: 700;
+}

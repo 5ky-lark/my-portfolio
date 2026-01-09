@@ -1852,3 +1852,16 @@ a:hover {
     max-height: 100vh;
   }
 }
+
+/* About Section Improvements */
+.about-text h2 {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .about-text h2 {
+    white-space: normal;
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+}

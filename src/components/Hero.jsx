@@ -30,7 +30,7 @@ function Hero() {
                 <p className="hero-description">
                     A fast-paced, result-oriented developer who ships production-ready systems fast by
                     leveraging AI-powered tools in the modern software era. I turn complex problems
-                    into scalable, battle-tested solutions.
+                    into efficient, scalable solutions.
                 </p>
 
                 <div className="hero-buttons">

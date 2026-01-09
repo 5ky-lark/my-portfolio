@@ -3,7 +3,7 @@ import { Bot, Image, Mail, Database, Search, ShoppingCart, TrendingUp, Users, Za
 const projects = [
     {
         title: 'Discord Automation Bots',
-        description: 'Built and scaled customized automation bots to automate workflows and reduce manual operational effort across multiple Discord communities.',
+        description: 'Built and scaled customized automation bots to automate workflows and reduce manual operational effort across multiple Discord servers.',
         icon: Bot,
         metrics: [
             { icon: Users, label: '15,000+ members' },

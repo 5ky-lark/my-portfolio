@@ -96,7 +96,7 @@ function Projects() {
                                             onClick={(e) => e.stopPropagation()}
                                         >
                                             <Github size={14} />
-                                            <span>View Code</span>
+                                            <span>View Repo</span>
                                         </a>
                                     ) : (
                                         <div className="project-badge-private">

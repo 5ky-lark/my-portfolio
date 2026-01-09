@@ -1875,3 +1875,11 @@ a:hover {
   text-decoration-color: rgba(56, 189, 248, 0.5);
   font-weight: 700;
 }
+
+/* Text Justification for Body Sections */
+.about-text p,
+.experience-description li,
+.project-description {
+  text-align: justify;
+  text-justify: inter-word;
+}

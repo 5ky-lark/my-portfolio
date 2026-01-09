@@ -577,16 +577,36 @@ a:hover {
     border-right: 1px solid rgba(148, 163, 184, 0.2);
   }
 
+  /* Force mobile links to be visible and inline */
   .navbar-links {
-    display: flex;
+    display: flex !important;
     gap: 0.5rem;
     flex: 1;
     justify-content: center;
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background: transparent !important;
+    flex-direction: row !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    width: auto !important;
+    height: auto !important;
   }
 
   .navbar-links a {
     font-size: 0.65rem;
     letter-spacing: 0.2px;
+    padding: 0.25rem 0.25rem;
+    color: var(--text-secondary);
+  }
+
+  /* Ensure active state doesn't shift things */
+  .navbar-links.active {
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
   .navbar-links a::after {

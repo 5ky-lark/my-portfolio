@@ -79,8 +79,7 @@ function About() {
                             systems, AI-powered systems, and high-performance web solutions.
                         </p>
                         <p>
-                            My approach combines modern AI-assisted development tools like Cursor and
-                            Antigravity with software principles to ship faster than the average developer.
+                            I combine AI-assisted development tools with proven software development principles to ship production-ready systems quickly and reliably.
                         </p>
 
                         <div className="about-stats">

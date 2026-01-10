@@ -28,13 +28,11 @@ function Hero() {
                 </p>
 
                 <p className="hero-description">
-                    A fast-paced, result-oriented developer who ships production-ready systems fast by
-                    leveraging AI-powered tools in the modern software era. I turn complex problems
-                    into efficient, scalable solutions.
+                    Fast-paced, result-oriented full-stack developer shipping scalable, production-ready systems rapidly by leveraging AI in the modern software development era
                 </p>
 
                 <div className="hero-buttons">
-                    <a href="/Skylark_Magsilang_Resume.pdf" download="Skylark_Magsilang_Resume.pdf" className="btn btn-primary">
+                    <a href="/SKYLARK MAGSILANG CV.pdf" download="SKYLARK_MAGSILANG_CV.pdf" className="btn btn-primary">
                         <Download size={20} />
                         Download CV
                     </a>

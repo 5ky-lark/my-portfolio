@@ -28,7 +28,7 @@ function Hero() {
                 </p>
 
                 <p className="hero-description">
-                    Fast-paced, result-oriented full-stack developer shipping scalable, production-ready systems rapidly by leveraging AI in the modern software development era
+                    Just a dev who hates repetitive tasks, so I automate everything. Full-stack builder with an AI sideb*tch.
                 </p>
 
                 <div className="hero-buttons">

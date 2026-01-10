@@ -5,11 +5,11 @@ const experiences = [
         location: 'Delaware, USA (Remote)',
         date: 'June 2025 - Present',
         description: [
-            <>Built and scaled customization automation bots across <strong>40+ Discord servers (15,000+ members)</strong>, automating workflows and reducing manual operational effort at scale</>,
-            <>Built a production web app integrating Google's Gemini 3 Pro image API with Discord bots to automate media asset generation for content creators, producing <strong>1,000+ images weekly</strong> and significantly improving content delivery speed for creators across multiple platforms</>,
-            <>Built and maintained an automated email web app that increased daily sending from ~100 manual emails to <strong>~2,000 automated emails (~60,000/month)</strong>, significantly reducing manual work and cutting SaaS subscription costs by <strong>~$300/month</strong> while maintaining <strong>99% uptime</strong></>,
-            <>Built a TikTok data scraper processing <strong>100+ profiles per minute</strong>, reducing request time from <strong>~4.2s to ~0.8s</strong> and lowering memory usage from <strong>~1.8 GB to ~450 MB</strong> using caching, worker pooling, and rate-limited automation to support high-volume creator research</>,
-            <>Built a Reddit lead scraping and outreach system processing <strong>hundreds of leads per run</strong>, using rate-limited crawlers, background workers, and SMTP pipelines to automate email discovery and outreach, <strong>replacing hours of manual lead research with a single automated run</strong></>,
+            <>Built and scaled customized automation bots across <strong>40+ Discord servers (15,000+ members)</strong>, automating workflows and reducing manual operational effort at scale</>,
+            <>Built a production web app integrating Gemini 3 Pro image API with Discord bots to automate media asset generation for content creators, producing <strong>1,000+ images weekly</strong>, accelerating content delivery, and reducing SaaS subscription costs by <strong>60–70% per month (~$300–$400)</strong></>,
+            <>Built and operated an automated email web application, sending from <strong>~3,000 manual emails/month to ~60,000 automated emails/month</strong> with <strong>99% uptime</strong>, reducing manual workload, lowering SaaS costs by <strong>~$300/month</strong>, and enabling onboarding for <strong>1,000+ content creators</strong></>,
+            <>Built and operated a TikTok data scraper processing <strong>100+ profiles per minute</strong>, reducing request time from <strong>~4.2s to ~0.8s</strong> and lowering memory usage from <strong>~1.8 GB to ~450 MB</strong> using caching, worker pooling, and rate-limited automation to support high-volume creator research</>,
+            <>Built and operated a Reddit lead scraping and outreach system processing <strong>hundreds of leads</strong> per run, <strong>replacing hours of manual lead research</strong> with a single automated run using rate-limited crawlers, background workers, and SMTP pipelines to automate email discovery and outreach</>,
         ],
     },
 ]

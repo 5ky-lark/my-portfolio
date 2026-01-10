@@ -35,7 +35,7 @@ const projects = [
     },
     {
         title: 'TikTok Data Scraper',
-        description: 'High-performance data scraper with caching, worker pooling, and rate-limited automation for high-volume creator research.',
+        description: 'Data scraper with caching, worker pooling, and rate-limited automation for high-volume creator research.',
         icon: Database,
         metrics: [
             { icon: Zap, label: '100+ profiles/min' },

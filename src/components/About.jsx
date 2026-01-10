@@ -74,12 +74,7 @@ function About() {
                         <h3>About Me</h3>
                         <h2>Building systems that scale</h2>
                         <p>
-                            I'm a Full Stack Developer based in the Philippines, currently working remotely
-                            for 8MB LLC (Zagged) in Delaware, USA. I specialize in building automation
-                            systems, AI-powered systems, and high-performance web solutions.
-                        </p>
-                        <p>
-                            I combine AI-assisted development tools with proven software development principles to ship production-ready systems quickly and reliably.
+                            PH-based, working remotely for 8MB LLC (Zagged) in Delaware. I build automation systems, AI tools, and web apps—usually all at once. Ship fast, fix faster.
                         </p>
 
                         <div className="about-stats">

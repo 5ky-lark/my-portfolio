@@ -11,7 +11,7 @@ const techStack = {
 const stats = [
     { value: 40, suffix: '+', label: 'Discord Servers Automated' },
     { value: 60, suffix: 'K+', label: 'Emails/Month Automated' },
-    { value: 99, suffix: '%', label: 'System Uptime' },
+    { value: 200, suffix: 'K+', label: 'Leads Scraped & Enriched' },
 ]
 
 function AnimatedStat({ value, suffix, label }) {

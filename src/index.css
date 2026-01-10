@@ -793,6 +793,7 @@ a:hover {
   animation: fadeInUp 0.6s ease forwards;
   animation-delay: 0.3s;
   opacity: 0;
+  text-wrap: balance;
 }
 
 .hero-buttons {

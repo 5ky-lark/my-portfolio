@@ -34,7 +34,7 @@ function Hero() {
                 </p>
 
                 <div className="hero-buttons">
-                    <a href="/SKYLARK_MAGSILANG_UPDATED_CV.pdf" download="SKYLARK_MAGSILANG_CV.pdf" className="btn btn-primary">
+                    <a href="/Skylark_Magsilang_CV.pdf" download="Skylark_Magsilang_CV.pdf" className="btn btn-primary">
                         <Download size={20} />
                         Download CV
                     </a>

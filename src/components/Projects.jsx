@@ -23,7 +23,7 @@ const projects = [
     },
     {
         title: 'Email Automation System',
-        description: 'Automated email web app that replaced manual sending with intelligent automation, dramatically reducing workload and SaaS costs.',
+        description: 'Automated email web app that replaced manual sending with intelligent automation, reducing workload and SaaS costs.',
         icon: Mail,
         metrics: [
             { icon: TrendingUp, label: '60,000 emails/month' },

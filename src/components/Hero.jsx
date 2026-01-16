@@ -38,7 +38,7 @@ function Hero() {
                     </a>
                     <a href="https://github.com/5ky-lark" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
                         <Github size={20} />
-                        View GitHub
+                        GitHub
                     </a>
                     <a href="https://www.linkedin.com/in/skylarkmagsilang/" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
                         <Linkedin size={20} />

@@ -1,4 +1,4 @@
-import { Github, Mail, Facebook } from 'lucide-react'
+import { Github, Mail, Facebook, Linkedin } from 'lucide-react'
 
 function Footer() {
     const currentYear = new Date().getFullYear()
@@ -24,6 +24,15 @@ function Footer() {
                         aria-label="Facebook"
                     >
                         <Facebook size={20} />
+                    </a>
+                    <a
+                        href="https://www.linkedin.com/in/skylarkmagsilang/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="footer-link"
+                        aria-label="LinkedIn"
+                    >
+                        <Linkedin size={20} />
                     </a>
                     <a
                         href="mailto:skylarkmagsilangsl@gmail.com"

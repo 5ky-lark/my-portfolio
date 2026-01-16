@@ -1,4 +1,4 @@
-import { Mail, Download, Github } from 'lucide-react'
+import { Mail, Download, Github, Linkedin } from 'lucide-react'
 
 function Hero() {
     return (
@@ -39,6 +39,10 @@ function Hero() {
                     <a href="https://github.com/5ky-lark" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
                         <Github size={20} />
                         View GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/skylarkmagsilang/" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+                        <Linkedin size={20} />
+                        LinkedIn
                     </a>
                 </div>
             </div>

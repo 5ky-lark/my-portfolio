@@ -808,6 +808,19 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding-top: 100px;
+  }
+
+  .hero-profile-container {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-profile-img {
+    width: 180px;
+    height: 180px;
+  }
+
   .hero-buttons {
     margin-bottom: 3rem;
   }
@@ -2008,4 +2021,122 @@ a:hover {
 .project-description {
   text-align: justify;
   text-justify: inter-word;
+}
+
+/* ============================================
+   CLIENT MARQUEE SLIDER
+   ============================================ */
+.client-marquee-section {
+  padding: 3rem 0;
+  background: var(--bg-secondary);
+  overflow: hidden;
+  border-top: 1px solid rgba(148, 163, 184, 0.1);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.client-marquee-title {
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.client-marquee-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%);
+  -webkit-mask-image: linear-gradient(to right,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%);
+}
+
+/* Track holds 4 sets of logos for seamless infinite scroll */
+.client-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  width: max-content;
+  animation: marqueeScroll 30s linear infinite;
+}
+
+.client-marquee-item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+
+.client-marquee-logo {
+  height: 40px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+  opacity: 0.7;
+  transition: opacity var(--transition-base), filter var(--transition-base);
+  filter: grayscale(100%);
+}
+
+.client-marquee-logo:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+/* Invert logos for dark mode visibility */
+.client-marquee-logo.invert-logo {
+  filter: grayscale(100%) invert(1) brightness(0.8);
+}
+
+.client-marquee-logo.invert-logo:hover {
+  filter: invert(1) brightness(1);
+}
+
+/* Animation scrolls 25% (one of four logo sets) */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+/* Pause on hover */
+.client-marquee-wrapper:hover .client-marquee-track {
+  animation-play-state: paused;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .client-marquee-section {
+    padding: 2rem 0;
+  }
+
+  .client-marquee-title {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .client-marquee-track {
+    gap: 2.5rem;
+    animation-duration: 20s;
+  }
+
+  .client-marquee-logo {
+    height: 30px;
+    max-width: 100px;
+  }
 }

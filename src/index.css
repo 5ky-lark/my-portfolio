@@ -2067,6 +2067,8 @@ a:hover {
   gap: 4rem;
   width: max-content;
   animation: marqueeScroll 30s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .client-marquee-item {

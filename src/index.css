@@ -2023,6 +2023,15 @@ a:hover {
   text-justify: inter-word;
 }
 
+@media (max-width: 768px) {
+
+  .about-text p,
+  .experience-description li,
+  .project-description {
+    text-align: left;
+  }
+}
+
 /* ============================================
    CLIENT MARQUEE SLIDER
    ============================================ */

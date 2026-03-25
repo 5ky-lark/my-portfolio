@@ -1,7 +1,12 @@
 import { useState, useEffect } from 'react'
-import { Sun, Moon } from 'lucide-react'
+import { Menu, X, Sun, Moon } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
-import { navigationLinks, profile } from '../data/portfolioData'
+
+const navLinks = [
+    { href: '#about', label: 'About' },
+    { href: '#experience', label: 'Experience' },
+    { href: '#projects', label: 'Projects' },
+]
 
 function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false)
@@ -24,10 +29,10 @@ function Navbar() {
     return (
         <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
             <div className="navbar-content">
-                <a href="#" className="navbar-logo">{profile.shortName}</a>
+                <a href="#" className="navbar-logo">SKY</a>
 
                 <ul className={`navbar-links ${isMobileOpen ? 'active' : ''}`}>
-                    {navigationLinks.map(link => (
+                    {navLinks.map(link => (
                         <li key={link.href}>
                             <a href={link.href} onClick={handleLinkClick}>
                                 {link.label}

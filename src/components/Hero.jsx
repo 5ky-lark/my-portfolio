@@ -1,5 +1,4 @@
-import { Download, Github, Linkedin } from 'lucide-react'
-import { profile, socialLinks } from '../data/portfolioData'
+import { Mail, Download, Github, Linkedin } from 'lucide-react'
 
 function Hero() {
     return (
@@ -12,36 +11,36 @@ function Hero() {
 
             <div className="hero-content">
                 <div className="hero-profile-container">
-                    <img src="/profile.jpg" alt={profile.fullName} className="hero-profile-img" />
+                    <img src="/profile.jpg" alt="Skylark Magsilang" className="hero-profile-img" />
                 </div>
 
                 <div className="hero-badge">
                     <span className="hero-badge-dot"></span>
-                    {profile.heroBadge}
+                    Let's build something
                 </div>
 
                 <h1 className="hero-title">
-                    <span className="hero-name">{profile.fullName}</span>
+                    <span className="hero-name">Skylark Magsilang</span>
                 </h1>
 
                 <p className="hero-subtitle">
-                    {profile.role}
+                    Full Stack Developer
                 </p>
 
                 <p className="hero-description">
-                    {profile.heroDescription}
+                    Just a dev who hates repetitive tasks, so I automate everything. Full-stack builder, with AI as my sideb*tch.
                 </p>
 
                 <div className="hero-buttons">
-                    <a href={profile.resumePath} download={profile.resumeDownloadName} className="btn btn-primary">
+                    <a href="/SKYLARK MAGSILANG CV.pdf" download="SKYLARK_MAGSILANG_CV.pdf" className="btn btn-primary">
                         <Download size={20} />
                         Download CV
                     </a>
-                    <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+                    <a href="https://github.com/5ky-lark" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
                         <Github size={20} />
                         GitHub
                     </a>
-                    <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+                    <a href="https://www.linkedin.com/in/skylarkmagsilang/" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
                         <Linkedin size={20} />
                         LinkedIn
                     </a>

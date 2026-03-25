@@ -7,7 +7,7 @@ const projects = [
         icon: Bot,
         metrics: [
             { icon: Users, label: '15,000+ members' },
-            { icon: Zap, label: '40+ servers' },
+            { icon: Zap, label: '50+ servers' },
         ],
         tech: ['Discord.py', 'Discord.js', 'Python', 'PostgreSQL', 'Docker'],
     },

@@ -9,7 +9,7 @@ const techStack = {
 }
 
 const stats = [
-    { value: 40, suffix: '+', label: 'Discord Servers Automated' },
+    { value: 50, suffix: '+', label: 'Discord Servers Automated' },
     { value: 63, suffix: 'K+', label: 'Emails/Month Automated' },
     { value: 217, suffix: 'K+', label: 'Leads Scraped & Enriched' },
 ]

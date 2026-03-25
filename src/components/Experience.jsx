@@ -1,15 +1,13 @@
 const experiences = [
     {
-        title: 'Software Developer',
+        title: 'Software Engineer',
         company: '8MB LLC (Zagged)',
         location: 'Delaware, USA (Remote)',
         date: 'June 2025 - Present',
         description: [
-            <>Built and scaled customized automation bots across <strong>40+ Discord servers (15,000+ members)</strong>, automating workflows and reducing manual operational effort at scale</>,
-            <>Built a production web app integrating Gemini 3 Pro image API with Discord bots to automate media asset generation for content creators, producing <strong>1,000+ images weekly</strong>, accelerating content delivery, and reducing SaaS subscription costs by <strong>60–70% per month (~$300–$400)</strong></>,
-            <>Built and operated an automated email web application, sending from <strong>~3,000 manual emails/month to ~60,000 automated emails/month</strong> with <strong>99% uptime</strong>, reducing manual workload, lowering SaaS costs by <strong>~$300/month</strong>, and enabling onboarding for <strong>1,000+ content creators</strong></>,
-            <>Built and operated a TikTok data scraper processing <strong>100+ profiles per minute</strong>, reducing request time from <strong>~4.2s to ~0.8s</strong> and lowering memory usage from <strong>~1.8 GB to ~450 MB</strong> using caching, worker pooling, and rate-limited automation to support high-volume creator research</>,
-            <>Built and operated a Reddit lead scraping and outreach system processing <strong>hundreds of leads</strong> per run, <strong>replacing hours of manual lead research</strong> with a single automated run using rate-limited crawlers, background workers, and SMTP pipelines to automate email discovery and outreach</>,
+            <>Developed and scaled customized automation bots across <strong>50+ Discord servers (30,000+ members)</strong> for U.S. brands to manage onboarding, moderation, account setup, payment submissions, video submissions, and creator content reviews, significantly reducing manual operations at scale</>,
+            <>Built a web application integrating Gemini with Discord bots to automate media generation for creators, reducing SaaS costs by <strong>60–70%</strong></>,
+            <>Engineered automation pipelines for email outreach and TikTok/Reddit data scraping, scaling outreach to <strong>~60K emails/month</strong>, automating lead discovery with rate-limited crawlers and worker pipelines, reducing SaaS costs, and driving the onboarding of <strong>1.5K+ UGC content creators</strong></>,
         ],
     },
 ]

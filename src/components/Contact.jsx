@@ -1,5 +1,14 @@
 import { useState } from 'react'
 import { Mail, Github, Send, Facebook, CheckCircle } from 'lucide-react'
+import { contactChannels } from '../data/portfolioData'
+
+const contactIcons = {
+    email: Mail,
+    github: Github,
+    facebook: Facebook,
+}
+
+const FORM_ENDPOINT = 'https://formspree.io/f/xvzzpgeo'
 
 function Contact() {
     const [formData, setFormData] = useState({
@@ -22,7 +31,7 @@ function Contact() {
         setIsSubmitting(true)
 
         try {
-            const response = await fetch('https://formspree.io/f/xvzzpgeo', {
+            const response = await fetch(FORM_ENDPOINT, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -60,39 +69,24 @@ function Contact() {
                         </p>
 
                         <div className="contact-links">
-                            <a
-                                href="mailto:skylarkmagsilangsl@gmail.com"
-                                className="contact-link"
-                            >
-                                <div className="contact-link-icon">
-                                    <Mail size={20} />
-                                </div>
-                                <span>skylarkmagsilangsl@gmail.com</span>
-                            </a>
+                            {contactChannels.map(({ key, href, label }) => {
+                                const Icon = contactIcons[key]
 
-                            <a
-                                href="https://github.com/5ky-lark"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="contact-link"
-                            >
-                                <div className="contact-link-icon">
-                                    <Github size={20} />
-                                </div>
-                                <span>github.com/5ky-lark</span>
-                            </a>
-
-                            <a
-                                href="https://web.facebook.com/skyzzxxcc/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="contact-link"
-                            >
-                                <div className="contact-link-icon">
-                                    <Facebook size={20} />
-                                </div>
-                                <span>facebook.com/skyzzxxcc</span>
-                            </a>
+                                return (
+                                    <a
+                                        key={key}
+                                        href={href}
+                                        target={href.startsWith('mailto:') ? undefined : '_blank'}
+                                        rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+                                        className="contact-link"
+                                    >
+                                        <div className="contact-link-icon">
+                                            <Icon size={20} />
+                                        </div>
+                                        <span>{label}</span>
+                                    </a>
+                                )
+                            })}
                         </div>
                     </div>
 

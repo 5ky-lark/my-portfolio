@@ -1,18 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
+import { aboutTechGroups, impactStats, profile } from '../data/portfolioData'
 
-const techStack = {
-    languages: ['JavaScript', 'TypeScript', 'Python', 'SQL'],
-    frontend: ['React', 'Next.js', 'Vite', 'Tailwind CSS'],
-    backend: ['Node.js', 'Express.js', 'Flask', 'FastAPI'],
-    database: ['PostgreSQL', 'SQLite', 'Supabase'],
-    devops: ['Docker', 'Railway', 'Render', 'Vercel'],
+function formatStatValue(value) {
+    return Number.isInteger(value) ? value : value.toFixed(1)
 }
-
-const stats = [
-    { value: 40, suffix: '+', label: 'Discord Servers Automated' },
-    { value: 63, suffix: 'K+', label: 'Emails/Month Automated' },
-    { value: 217, suffix: 'K+', label: 'Leads Scraped & Enriched' },
-]
 
 function AnimatedStat({ value, suffix, label }) {
     const [count, setCount] = useState(0)
@@ -50,7 +41,7 @@ function AnimatedStat({ value, suffix, label }) {
                 setCount(value)
                 clearInterval(timer)
             } else {
-                setCount(Math.floor(current))
+                setCount(value < 10 ? Number(current.toFixed(1)) : Math.floor(current))
             }
         }, duration / steps)
 
@@ -59,7 +50,7 @@ function AnimatedStat({ value, suffix, label }) {
 
     return (
         <div className="stat-item" ref={ref}>
-            <div className="stat-number">{count}{suffix}</div>
+            <div className="stat-number">{formatStatValue(count)}{suffix}</div>
             <div className="stat-label">{label}</div>
         </div>
     )
@@ -74,12 +65,12 @@ function About() {
                         <h3>About Me</h3>
                         <h2>Building systems that scale</h2>
                         <p>
-                            Based in the Philippines, building stuff for 8MB LLC (Zagged) in Delaware remotely. I make bots, automate workflows, and build web apps that don't suck. If there's a way to make a computer do my job, I'll find it.
+                            Based in the {profile.location}, building for {profile.employer} in {profile.employerLocation} remotely. I make bots, automate workflows, and build web apps that solve real operational problems. If there's a repeatable task, I look for a reliable system to handle it.
                         </p>
 
                         <div className="about-stats">
-                            {stats.map((stat, index) => (
-                                <AnimatedStat key={index} {...stat} />
+                            {impactStats.map((stat) => (
+                                <AnimatedStat key={stat.label} {...stat} />
                             ))}
                         </div>
                     </div>
@@ -87,41 +78,16 @@ function About() {
                     <div className="about-tech">
                         <h4>Tech Stack</h4>
 
-                        <div className="tech-category">
-                            <div className="tech-category-label">Languages</div>
-                            <div className="tech-grid">
-                                {techStack.languages.map(tech => (
-                                    <div key={tech} className="tech-item">{tech}</div>
-                                ))}
+                        {aboutTechGroups.map(({ title, skills }) => (
+                            <div key={title} className="tech-category">
+                                <div className="tech-category-label">{title}</div>
+                                <div className="tech-grid">
+                                    {skills.map((tech) => (
+                                        <div key={tech} className="tech-item">{tech}</div>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-
-                        <div className="tech-category">
-                            <div className="tech-category-label">Frontend</div>
-                            <div className="tech-grid">
-                                {techStack.frontend.map(tech => (
-                                    <div key={tech} className="tech-item">{tech}</div>
-                                ))}
-                            </div>
-                        </div>
-
-                        <div className="tech-category">
-                            <div className="tech-category-label">Backend</div>
-                            <div className="tech-grid">
-                                {techStack.backend.map(tech => (
-                                    <div key={tech} className="tech-item">{tech}</div>
-                                ))}
-                            </div>
-                        </div>
-
-                        <div className="tech-category">
-                            <div className="tech-category-label">Database & DevOps</div>
-                            <div className="tech-grid">
-                                {[...techStack.database, ...techStack.devops].map(tech => (
-                                    <div key={tech} className="tech-item">{tech}</div>
-                                ))}
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </div>

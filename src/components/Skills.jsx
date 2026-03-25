@@ -1,37 +1,14 @@
 import { Code, Layout, Server, Database, Cloud, Wrench } from 'lucide-react'
+import { skillCategories } from '../data/portfolioData'
 
-const skillCategories = [
-    {
-        title: 'Languages',
-        icon: Code,
-        skills: ['JavaScript', 'TypeScript', 'Python', 'SQL'],
-    },
-    {
-        title: 'Frontend',
-        icon: Layout,
-        skills: ['React', 'Next.js', 'Tailwind CSS', 'HTML/CSS'],
-    },
-    {
-        title: 'Backend',
-        icon: Server,
-        skills: ['Node.js', 'Express.js', 'Flask', 'FastAPI', 'REST APIs'],
-    },
-    {
-        title: 'Databases',
-        icon: Database,
-        skills: ['PostgreSQL', 'SQLite', 'Supabase', 'Redis'],
-    },
-    {
-        title: 'DevOps & Cloud',
-        icon: Cloud,
-        skills: ['Docker', 'Railway', 'Render', 'Vercel', 'SSH', 'Git'],
-    },
-    {
-        title: 'Tools & Other',
-        icon: Wrench,
-        skills: ['Cursor AI', 'Discord.py', 'Selenium', 'SMTP', 'Gunicorn'],
-    },
-]
+const skillIcons = {
+    Languages: Code,
+    Frontend: Layout,
+    Backend: Server,
+    Databases: Database,
+    'DevOps & Cloud': Cloud,
+    'Tools & Other': Wrench,
+}
 
 function Skills() {
     return (
@@ -45,23 +22,27 @@ function Skills() {
                 </div>
 
                 <div className="skills-grid">
-                    {skillCategories.map((category, index) => (
-                        <div key={index} className="skill-category">
-                            <div className="skill-category-header">
-                                <div className="skill-category-icon">
-                                    <category.icon size={20} />
-                                </div>
-                                <h3 className="skill-category-title">{category.title}</h3>
-                            </div>
-                            <div className="skill-list">
-                                {category.skills.map((skill, i) => (
-                                    <div key={i} className="skill-item">
-                                        {skill}
+                    {skillCategories.map((category) => {
+                        const Icon = skillIcons[category.title]
+
+                        return (
+                            <div key={category.title} className="skill-category">
+                                <div className="skill-category-header">
+                                    <div className="skill-category-icon">
+                                        {Icon ? <Icon size={20} /> : null}
                                     </div>
-                                ))}
+                                    <h3 className="skill-category-title">{category.title}</h3>
+                                </div>
+                                <div className="skill-list">
+                                    {category.skills.map((skill) => (
+                                        <div key={skill} className="skill-item">
+                                            {skill}
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        )
+                    })}
                 </div>
             </div>
         </section>

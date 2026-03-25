@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect } from 'react'
 
-const ThemeContext = createContext()
+const ThemeContext = createContext(undefined)
 
 export function ThemeProvider({ children }) {
     const [isDark, setIsDark] = useState(() => {
@@ -13,7 +13,7 @@ export function ThemeProvider({ children }) {
         localStorage.setItem('theme', isDark ? 'dark' : 'light')
     }, [isDark])
 
-    const toggleTheme = () => setIsDark(!isDark)
+    const toggleTheme = () => setIsDark((currentValue) => !currentValue)
 
     return (
         <ThemeContext.Provider value={{ isDark, toggleTheme }}>
@@ -23,5 +23,11 @@ export function ThemeProvider({ children }) {
 }
 
 export function useTheme() {
-    return useContext(ThemeContext)
+    const context = useContext(ThemeContext)
+
+    if (!context) {
+        throw new Error('useTheme must be used within a ThemeProvider')
+    }
+
+    return context
 }

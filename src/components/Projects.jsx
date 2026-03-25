@@ -3,32 +3,32 @@ import { Bot, Image, Mail, Database, Search, ShoppingCart, TrendingUp, Users, Za
 const projects = [
     {
         title: 'Discord Automation Bots',
-        description: 'Built and scaled customized automation bots to automate workflows and reduce manual operational effort across multiple Discord servers.',
+        description: 'Developed and scaled customized automation bots for U.S. brands to manage onboarding, moderation, account setup, payment submissions, video submissions, and creator content reviews.',
         icon: Bot,
         metrics: [
-            { icon: Users, label: '15,000+ members' },
-            { icon: Zap, label: '40+ servers' },
+            { icon: Users, label: '30,000+ members' },
+            { icon: Zap, label: '50+ servers' },
         ],
         tech: ['Discord.py', 'Discord.js', 'Python', 'PostgreSQL', 'Docker'],
     },
     {
         title: 'Gemini AI Media Generator',
-        description: 'Production web app integrating Google\'s Gemini 3 Pro image API with Discord bots to automate media asset generation for content creators.',
+        description: 'Web app integrating Gemini with Discord bots to automate media generation for creators and reduce ongoing SaaS spend.',
         icon: Image,
         metrics: [
-            { icon: TrendingUp, label: '1,000+ images/week' },
-            { icon: Zap, label: 'Real-time generation' },
+            { icon: TrendingUp, label: '60-70% lower SaaS cost' },
+            { icon: Zap, label: 'Automated media generation' },
         ],
         tech: ['React', 'Gemini API', 'Discord.js', 'Node.js'],
     },
     {
         title: 'Email Automation System',
-        description: 'Automated email web app that replaced manual sending with intelligent automation, reducing workload and SaaS costs.',
+        description: 'Automation pipelines for outreach and lead operations with worker-driven processing, rate limiting, and scalable sending workflows.',
         icon: Mail,
         metrics: [
             { icon: TrendingUp, label: '60,000 emails/month' },
-            { icon: Clock, label: '99% uptime' },
-            { icon: Zap, label: '$300/mo saved' },
+            { icon: Users, label: '1.5K+ creators onboarded' },
+            { icon: Zap, label: 'Reduced SaaS costs' },
         ],
         tech: ['Flask', 'SMTP', 'PostgreSQL', 'Render'],
         github: 'https://github.com/5ky-lark/email-automation-smtp',
@@ -51,7 +51,7 @@ const projects = [
         icon: Search,
         metrics: [
             { icon: Users, label: 'Hundreds of leads/run' },
-            { icon: Zap, label: 'Fully automated' },
+            { icon: Clock, label: 'Rate-limited pipelines' },
         ],
         tech: ['Python', 'Flask', 'SMTP', 'Background Workers'],
     },

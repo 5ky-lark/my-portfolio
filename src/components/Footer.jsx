@@ -1,4 +1,12 @@
 import { Github, Mail, Facebook, Linkedin } from 'lucide-react'
+import { profile, socialLinks } from '../data/portfolioData'
+
+const footerLinks = [
+    { href: socialLinks.github, label: 'GitHub', icon: Github },
+    { href: socialLinks.facebook, label: 'Facebook', icon: Facebook },
+    { href: socialLinks.linkedin, label: 'LinkedIn', icon: Linkedin },
+    { href: `mailto:${profile.email}`, label: 'Email', icon: Mail },
+]
 
 function Footer() {
     const currentYear = new Date().getFullYear()
@@ -7,44 +15,22 @@ function Footer() {
         <footer className="footer">
             <div className="footer-content">
                 <div className="footer-links">
-                    <a
-                        href="https://github.com/5ky-lark"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="footer-link"
-                        aria-label="GitHub"
-                    >
-                        <Github size={20} />
-                    </a>
-                    <a
-                        href="https://web.facebook.com/skyzzxxcc/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="footer-link"
-                        aria-label="Facebook"
-                    >
-                        <Facebook size={20} />
-                    </a>
-                    <a
-                        href="https://www.linkedin.com/in/skylarkmagsilang/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="footer-link"
-                        aria-label="LinkedIn"
-                    >
-                        <Linkedin size={20} />
-                    </a>
-                    <a
-                        href="mailto:skylarkmagsilangsl@gmail.com"
-                        className="footer-link"
-                        aria-label="Email"
-                    >
-                        <Mail size={20} />
-                    </a>
+                    {footerLinks.map(({ href, label, icon: Icon }) => (
+                        <a
+                            key={label}
+                            href={href}
+                            target={href.startsWith('mailto:') ? undefined : '_blank'}
+                            rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+                            className="footer-link"
+                            aria-label={label}
+                        >
+                            <Icon size={20} />
+                        </a>
+                    ))}
                 </div>
 
                 <p className="footer-text">
-                    Designed & Built with 💙 by <span>Skylark Magsilang</span>
+                    Designed & Built with care by <span>{profile.fullName}</span>
                 </p>
                 <p className="footer-copyright">
                     © {currentYear} — All rights reserved. Ship fast, break nothing.

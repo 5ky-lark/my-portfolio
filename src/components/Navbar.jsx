@@ -29,9 +29,19 @@ function Navbar() {
     return (
         <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
             <div className="navbar-content">
+                <button
+                    className="navbar-toggle"
+                    onClick={() => setIsMobileOpen(prev => !prev)}
+                    aria-label={isMobileOpen ? 'Close menu' : 'Open menu'}
+                    aria-expanded={isMobileOpen}
+                    aria-controls="mobile-nav-links"
+                >
+                    {isMobileOpen ? <X size={18} /> : <Menu size={18} />}
+                </button>
+
                 <a href="#" className="navbar-logo">SKY</a>
 
-                <ul className={`navbar-links ${isMobileOpen ? 'active' : ''}`}>
+                <ul id="mobile-nav-links" className={`navbar-links ${isMobileOpen ? 'active' : ''}`}>
                     {navLinks.map(link => (
                         <li key={link.href}>
                             <a href={link.href} onClick={handleLinkClick}>

@@ -1,13 +1,14 @@
 const experiences = [
     {
-        title: 'Software Engineer',
+        title: 'Software Engineer (Full-time)',
         company: '8MB LLC (Zagged)',
-        location: 'Delaware, USA (Remote)',
+        location: 'Remote (New York, USA)',
         date: 'June 2025 - Present',
         description: [
-            <>Developed and scaled customized automation bots across <strong>50+ Discord servers (30,000+ members)</strong> for U.S. brands to manage onboarding, moderation, account setup, payment submissions, video submissions, and creator content reviews, significantly reducing manual operations at scale</>,
-            <>Built a web application integrating Gemini with Discord bots to automate media generation for creators, reducing SaaS costs by <strong>60–70%</strong></>,
-            <>Engineered automation pipelines for email outreach and TikTok/Reddit data scraping, scaling outreach to <strong>~60K emails/month</strong>, automating lead discovery with rate-limited crawlers and worker pipelines, reducing SaaS costs, and driving the onboarding of <strong>1.5K+ UGC content creators</strong></>,
+            <>Developed and scaled customized automation bots across <strong>50+ Discord servers (30,000+ members)</strong> for U.S. brands to manage onboarding, moderation, account setup, video submissions, payment submissions, and content checks of content creators, significantly reducing manual operations.</>,
+            <>Built an internal automation tool for email outreach and TikTok/Reddit scraping, scaling to over <strong>60,000 emails/month</strong> reducing SaaS costs, and enabling onboarding of over <strong>1,500 UGC creators</strong>.</>,
+            <>Developed a web application for the content lead, integrating Gemini with Discord bots to automate creator media generation and reducing SaaS costs by <strong>60–70%</strong>.</>,
+            <>Built a scraping-based tool for brand managers to automate counting of creator posts across social media, processing over <strong>100,000 posts/month</strong> and eliminating manual reporting.</>,
         ],
     },
     {

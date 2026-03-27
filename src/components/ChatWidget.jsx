@@ -10,12 +10,12 @@ KEY INFORMATION:
 - Core Stack: JavaScript, TypeScript, Python, SQL, React, Next.js, Node.js, Flask, PostgreSQL, Docker.
 - Experience: Automation, AI-powered applications, high-performance web solutions.
 - Projects:
-    1. Discord Automation Bots: 15,000+ members, 50+ servers, Python/PostgreSQL.
+        1. Discord Automation Bots: 30,000+ members, 50+ servers, Python/PostgreSQL.
   2. Gemini AI Media Generator: Integrates Gemini 3 Pro with Discord, 1,000+ images/week.
   3. Email Automation System: ~2,000 automated emails daily (~60K/month), 99% uptime, Flask/SMTP, saving ~$300/month.
   4. TikTok Data Scraper: 100+ profiles/min, 5x faster, reduced memory from 1.8GB to 450MB, Python/Selenium.
-  5. Reddit Lead Scraper: Hundreds of leads per run, automated outreach, Python/Flask.
-  6. EMS Dental E-commerce: Full-stack Next.js app with PayMongo and RAG-powered AI assistant.
+    5. Google Maps Data Scraper: FastAPI + Playwright scraper with website email/phone extraction and CSV/JSON export.
+    6. NEU Library Visitor Log: Next.js 14 + TypeScript system with NEU Google OAuth, role-aware logs, analytics, and Gemini admin assistant.
 
 STYLE:
 - Tone: Professional, fast-paced, result-oriented, helpful, and concise.
@@ -55,10 +55,9 @@ function ChatWidget() {
         setIsLoading(true)
 
         try {
-            // Transform history for Claude format (user/assistant roles)
-            // Note: Claude doesn't support 'system' role in history, it's a separate parameter
+            // Transform history to backend chat format (user/model roles).
             const messagesHistory = messages.slice(1).map(msg => ({
-                role: msg.role === 'model' ? 'assistant' : 'user',
+                role: msg.role,
                 content: msg.text
             }))
 
@@ -82,7 +81,7 @@ function ChatWidget() {
             }
 
             const data = await response.json()
-            const reply = data.content[0].text
+            const reply = data.reply
 
             setMessages(prev => [...prev, { role: 'model', text: reply }])
         } catch (error) {
@@ -92,11 +91,13 @@ function ChatWidget() {
             let userFriendlyError = "Oops! I encountered an error."
 
             if (errorMessage.includes("401")) {
-                userFriendlyError = "Error: Invalid API Key. Check your Anthropic key."
+                userFriendlyError = "Error: Invalid API Key. Check your Gemini key."
+            } else if (errorMessage.includes("429") || errorMessage.toLowerCase().includes("too many requests")) {
+                userFriendlyError = "You're sending messages too fast. Please wait a few seconds and try again."
             } else if (errorMessage.includes("403")) {
                 userFriendlyError = "Error: Access Denied. Your key might be restricted."
-            } else if (errorMessage.includes("credit_limit")) {
-                userFriendlyError = "Error: Out of credits. Check your Anthropic billing."
+            } else if (errorMessage.toLowerCase().includes("quota") || errorMessage.toLowerCase().includes("resource_exhausted")) {
+                userFriendlyError = "Error: Gemini quota reached. Check your Google AI billing/quota."
             } else {
                 userFriendlyError = `Error: ${errorMessage}`
             }

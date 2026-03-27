@@ -28,7 +28,7 @@ function Hero() {
                 </p>
 
                 <p className="hero-description">
-                    Just a dev who hates repetitive tasks, so I automate everything. Full-stack builder, with AI as my sideb*tch.
+                    Full-stack developer focused on automation and efficiency, leveraging AI to streamline workflows
                 </p>
 
                 <div className="hero-buttons">

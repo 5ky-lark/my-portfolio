@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Menu, X, Sun, Moon } from 'lucide-react'
+import { Sun, Moon } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 
 const navLinks = [
@@ -10,7 +10,6 @@ const navLinks = [
 
 function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false)
-    const [isMobileOpen, setIsMobileOpen] = useState(false)
     const { isDark, toggleTheme } = useTheme()
 
     useEffect(() => {
@@ -22,29 +21,15 @@ function Navbar() {
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
-    const handleLinkClick = () => {
-        setIsMobileOpen(false)
-    }
-
     return (
         <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
             <div className="navbar-content">
-                <button
-                    className="navbar-toggle"
-                    onClick={() => setIsMobileOpen(prev => !prev)}
-                    aria-label={isMobileOpen ? 'Close menu' : 'Open menu'}
-                    aria-expanded={isMobileOpen}
-                    aria-controls="mobile-nav-links"
-                >
-                    {isMobileOpen ? <X size={18} /> : <Menu size={18} />}
-                </button>
-
                 <a href="#" className="navbar-logo">SKY</a>
 
-                <ul id="mobile-nav-links" className={`navbar-links ${isMobileOpen ? 'active' : ''}`}>
+                <ul className="navbar-links">
                     {navLinks.map(link => (
                         <li key={link.href}>
-                            <a href={link.href} onClick={handleLinkClick}>
+                            <a href={link.href}>
                                 {link.label}
                             </a>
                         </li>

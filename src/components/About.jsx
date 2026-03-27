@@ -74,7 +74,7 @@ function About() {
                         <h3>About Me</h3>
                         <h2>Building systems that scale</h2>
                         <p>
-                            Based in the Philippines, building stuff for 8MB LLC (Zagged) in Delaware remotely. I make bots, automate workflows, and build web apps that don't suck. If there's a way to make a computer do my job, I'll find it.
+                            Based in the Philippines, building stuff for 8MB LLC (Zagged) in New York remotely. I make bots, automate workflows, and build web apps that don't suck. If there's a way to make a computer do my job, I'll find it.
                         </p>
 
                         <div className="about-stats">

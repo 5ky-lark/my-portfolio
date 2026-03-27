@@ -16,9 +16,9 @@ const experiences = [
         location: 'Remote (Florida, USA)',
         date: 'January 2026 - Present',
         description: [
-            <>Strengthened dashboard security and data quality through role-based permissions, password recovery, email verification, rate limiting, and sanitized webhook ingestion</>,
-            <>Improved client onboarding and activation by building trial signup, verification, and access-control systems that supported a smoother path from prospect to active user</>,
-            <>Automated lead delivery and assignment through authenticated webhook APIs, validation, sanitization, and email notifications, reducing manual handling and speeding up lead distribution</>,
+            <>Strengthened security and data quality of dashboard through role-based permissions, password recovery, email verification, rate limiting, and sanitized webhook ingestion.</>,
+            <>Improved client onboarding funnel by building trial signup and verification systems, converting over <strong>5,000 website visits</strong> into over <strong>100 qualified signup leads</strong>, tracked via a custom admin dashboard/CRM.</>,
+            <>Automated lead delivery and assignment through dashboard authenticating webhook APIs, validation, sanitization, and email notifications, reducing manual handling and speeding up lead distribution.</>,
         ],
     },
 ]

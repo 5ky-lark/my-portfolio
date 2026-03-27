@@ -1,70 +1,76 @@
-# Skylark Magsilang's Portfolio
+# Skylark Portfolio
 
-A modern, high-performance portfolio website built with React and Vite, featuring an AI-powered chatbot assistant.
+Personal portfolio website built with React + Vite, including a server-side AI chat assistant.
 
-[Live Demo](https://skylarkmagsilang.com)
+Live site: https://skylarkmagsilang.com
 
-## 🚀 Features
+## What Is Included
 
-- **AI Chatbot Assistant**: Integrated "Virtual Skylark" powered by Anthropic's Claude 3 Haiku to answer queries about skills and experience.
-- **Modern UI/UX**: Sleek, responsive design with dark/light mode support.
-- **Performance**: Optimized for speed (99+ Lighthouse score) using Vite.
-- **Interactive Elements**: Animated counters, hover effects, and smooth scrolling.
-- **Secure Architecture**: API keys are protected using Vercel Serverless Functions (no client-side exposure).
+- Responsive single-page portfolio (hero, about, projects, experience, contact)
+- Downloadable CV file served from public assets
+- Virtual Skylark chat widget
+- Serverless chat API route
 
-## 🛠️ Tech Stack
+## Recent Updates
 
-- **Frontend**: React, Vite, CSS Modules
-- **AI**: Anthropic Claude 3 API
-- **Deployment**: Vercel
-- **Icons**: Lucide React
-- **Formatting**: Prettier, ESLint
+- Chat backend migrated from Anthropic to Gemini
+- Anti-spam added to chat API (rate limit, cooldown, temporary blocking, payload validation)
+- Projects section updated with:
+  - Google Maps Data Scraper
+  - NEU Library Visitor Log
+- Experience section updated with TaxFirmSystems (Part-time Web Developer)
+- CV file in public assets replaced with latest version
 
-## 📦 Installation
+## Tech Stack
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/5ky-lark/my-portfolio.git
-   cd my-portfolio
-   ```
+- Frontend: React, Vite, CSS
+- API route: Node.js serverless function
+- AI provider: Google Gemini API
+- Icons: Lucide React
+- Deployment: Vercel
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+## Local Setup
 
-3. **Set up Environment Variables**
-   Create a `.env` file in the root directory:
-   ```env
-   # Vercel Configuration (Required for Production)
-   ANTHROPIC_API_KEY=your_api_key_here
+1. Clone and install
 
-   # Local Development (Optional if using Vercel CLI)
-   VITE_ANTHROPIC_API_KEY=your_api_key_here
-   ```
+```bash
+git clone https://github.com/5ky-lark/my-portfolio.git
+cd my-portfolio
+npm install
+```
 
-4. **Run Locally**
-   ```bash
-   npm run dev
-   ```
+2. Create .env (copy from .env.example)
 
-## 🚀 Deployment
+```env
+GEMINI_API_KEY=your_gemini_api_key_here
+GEMINI_MODEL=gemini-1.5-flash
 
-This project is optimized for deployment on **Vercel**.
+CHAT_RATE_LIMIT_WINDOW_MS=60000
+CHAT_RATE_LIMIT_MAX_REQUESTS=12
+CHAT_MIN_INTERVAL_MS=1500
+CHAT_BLOCK_DURATION_MS=300000
+CHAT_MAX_INPUT_CHARS=1200
+CHAT_MAX_HISTORY_MESSAGES=20
+```
 
-1. **Push to GitHub**
-   ```bash
-   git push origin main
-   ```
+3. Run development server
 
-2. **Import to Vercel**
-   - Go to [Vercel Dashboard](https://vercel.com).
-   - Click **Add New Project** and select your repository.
-   - **Important**: Add your `ANTHROPIC_API_KEY` in the Environment Variables settings.
-   - Click **Deploy**.
+```bash
+npm run dev
+```
 
-The `api/chat.js` file will automatically be deployed as a Serverless Function to handle secure API requests.
+4. Build for production
 
-## 📄 License
+```bash
+npm run build
+```
+
+## Deployment Notes
+
+- Deploy on Vercel
+- Add all .env values in Vercel Project Settings > Environment Variables
+- The chat endpoint is served from api/chat.js
+
+## License
 
 MIT © Skylark Magsilang

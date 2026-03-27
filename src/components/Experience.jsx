@@ -10,6 +10,17 @@ const experiences = [
             <>Engineered automation pipelines for email outreach and TikTok/Reddit data scraping, scaling outreach to <strong>~60K emails/month</strong>, automating lead discovery with rate-limited crawlers and worker pipelines, reducing SaaS costs, and driving the onboarding of <strong>1.5K+ UGC content creators</strong></>,
         ],
     },
+    {
+        title: 'Web Developer (Part-time)',
+        company: 'TaxFirmSystems',
+        location: 'Remote (Florida, USA)',
+        date: 'January 2026 - Present',
+        description: [
+            <>Strengthened dashboard security and data quality through role-based permissions, password recovery, email verification, rate limiting, and sanitized webhook ingestion</>,
+            <>Improved client onboarding and activation by building trial signup, verification, and access-control systems that supported a smoother path from prospect to active user</>,
+            <>Automated lead delivery and assignment through authenticated webhook APIs, validation, sanitization, and email notifications, reducing manual handling and speeding up lead distribution</>,
+        ],
+    },
 ]
 
 const education = [

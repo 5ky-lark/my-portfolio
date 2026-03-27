@@ -6,7 +6,7 @@ const projects = [
         description: 'Built and scaled customized automation bots to automate workflows and reduce manual operational effort across multiple Discord servers.',
         icon: Bot,
         metrics: [
-            { icon: Users, label: '15,000+ members' },
+            { icon: Users, label: '30,000+ members' },
             { icon: Zap, label: '50+ servers' },
         ],
         tech: ['Discord.py', 'Discord.js', 'Python', 'PostgreSQL', 'Docker'],
@@ -46,25 +46,28 @@ const projects = [
         github: 'https://github.com/5ky-lark/tiktok-profile-scraper',
     },
     {
-        title: 'Reddit Lead Scraper',
-        description: 'Outreach system with rate-limited crawlers, background workers, and SMTP pipelines to automate email discovery and outreach.',
+        title: 'Google Maps Data Scraper',
+        description: 'FastAPI scraper that collects Google Maps business listings, extracts website emails/phones, and exports clean datasets for outreach workflows.',
         icon: Search,
         metrics: [
-            { icon: Users, label: 'Hundreds of leads/run' },
-            { icon: Zap, label: 'Fully automated' },
+            { icon: Users, label: 'All 50 US states' },
+            { icon: Zap, label: 'CSV/JSON export' },
+            { icon: Clock, label: 'SQLite cached runs' },
         ],
-        tech: ['Python', 'Flask', 'SMTP', 'Background Workers'],
+        tech: ['Python', 'FastAPI', 'Playwright', 'SQLite', 'HTTPX'],
+        github: 'https://github.com/5ky-lark/google-maps-and-website-scraper',
     },
     {
-        title: 'EMS Dental E-commerce',
-        description: 'Capstone project: dental e-commerce platform with CRUD admin workflows, RBAC, Auth, PayMongo integration, and analytics.',
+        title: 'NEU Library Visitor Log',
+        description: 'Full-stack campus visitor management system with NEU-restricted Google OAuth, role-aware logging, analytics dashboard, and admin AI assistant.',
         icon: ShoppingCart,
         metrics: [
-            { icon: Zap, label: 'Full-stack solution' },
-            { icon: Users, label: 'RBAC system' },
+            { icon: Lock, label: 'Google OAuth + RBAC' },
+            { icon: TrendingUp, label: 'Analytics + PDF export' },
+            { icon: Bot, label: 'Gemini admin assistant' },
         ],
-        tech: ['Next.js', 'Prisma', 'PayMongo', 'PostgreSQL'],
-        github: 'https://github.com/5ky-lark/emsdental',
+        tech: ['Next.js 14', 'TypeScript', 'MongoDB', 'NextAuth', 'Tailwind CSS'],
+        github: 'https://github.com/5ky-lark/NEU-library-log-google-OAuth2.0',
     },
 ]
 

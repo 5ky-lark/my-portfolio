@@ -92,6 +92,8 @@ function ChatWidget() {
 
             if (errorMessage.includes("401")) {
                 userFriendlyError = "Error: Invalid API Key. Check your Gemini key."
+            } else if (errorMessage.toLowerCase().includes("not found") || errorMessage.toLowerCase().includes("not supported for generatecontent")) {
+                userFriendlyError = "Error: Gemini model is unavailable. Try again in a moment while fallback models are applied."
             } else if (errorMessage.includes("429") || errorMessage.toLowerCase().includes("too many requests")) {
                 userFriendlyError = "You're sending messages too fast. Please wait a few seconds and try again."
             } else if (errorMessage.includes("403")) {

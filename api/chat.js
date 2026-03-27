@@ -102,6 +102,38 @@ function validateMessages(messages) {
     return { valid: true };
 }
 
+function extractReply(data) {
+    return (data.candidates || [])
+        .flatMap((candidate) => candidate?.content?.parts || [])
+        .map((part) => part?.text || '')
+        .join('')
+        .trim();
+}
+
+async function generateWithModel({ apiKey, model, system, contents }) {
+    const response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${apiKey}`,
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                systemInstruction: {
+                    parts: [{ text: String(system || '') }],
+                },
+                contents,
+                generationConfig: {
+                    maxOutputTokens: 1024,
+                },
+            }),
+        }
+    );
+
+    const data = await response.json();
+    return { response, data };
+}
+
 export default async function handler(req, res) {
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
@@ -111,7 +143,12 @@ export default async function handler(req, res) {
         const { messages, system } = req.body;
         const clientIp = getClientIp(req);
         const apiKey = process.env.GEMINI_API_KEY;
-        const model = process.env.GEMINI_MODEL || 'gemini-1.5-flash';
+        const primaryModel = process.env.GEMINI_MODEL || 'gemini-2.0-flash';
+        const fallbackModels = (process.env.GEMINI_FALLBACK_MODELS || 'gemini-2.0-flash,gemini-1.5-flash-latest')
+            .split(',')
+            .map((model) => model.trim())
+            .filter(Boolean);
+        const modelCandidates = Array.from(new Set([primaryModel, ...fallbackModels]));
 
         const rateLimit = checkRateLimit(clientIp);
         if (!rateLimit.allowed) {
@@ -134,40 +171,39 @@ export default async function handler(req, res) {
             parts: [{ text: String(msg.content || '') }],
         }));
 
-        const response = await fetch(
-            `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${apiKey}`,
-            {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                systemInstruction: {
-                    parts: [{ text: String(system || '') }],
-                },
-                contents,
-                generationConfig: {
-                    maxOutputTokens: 1024,
-                },
-            }),
-        }
-        );
+        let lastError = null;
+        let reply = '';
 
-        const data = await response.json();
+        for (const model of modelCandidates) {
+            const { response, data } = await generateWithModel({ apiKey, model, system, contents });
 
-        if (!response.ok) {
+            if (response.ok) {
+                reply = extractReply(data);
+                if (reply) {
+                    break;
+                }
+
+                lastError = { status: 502, message: 'Gemini returned an empty response' };
+                continue;
+            }
+
+            const message = data?.error?.message || 'Error fetching from Gemini';
+            const isModelNotFound = response.status === 404 && /not found|not supported/i.test(message);
+
+            if (isModelNotFound) {
+                console.warn(`Gemini model unavailable: ${model}. Trying next fallback model.`);
+                lastError = { status: response.status, message };
+                continue;
+            }
+
             console.error('Gemini API Error:', data);
-            return res.status(response.status).json({ error: data.error?.message || 'Error fetching from Gemini' });
+            return res.status(response.status).json({ error: message });
         }
-
-        const reply = (data.candidates || [])
-            .flatMap((candidate) => candidate?.content?.parts || [])
-            .map((part) => part?.text || '')
-            .join('')
-            .trim();
 
         if (!reply) {
-            return res.status(502).json({ error: 'Gemini returned an empty response' });
+            const status = lastError?.status || 502;
+            const message = lastError?.message || 'Gemini returned an empty response';
+            return res.status(status).json({ error: message });
         }
 
         return res.status(200).json({ reply });

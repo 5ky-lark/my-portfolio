@@ -43,7 +43,8 @@ npm install
 
 ```env
 GEMINI_API_KEY=your_gemini_api_key_here
-GEMINI_MODEL=gemini-1.5-flash
+GEMINI_MODEL=gemini-2.0-flash
+GEMINI_FALLBACK_MODELS=gemini-2.0-flash,gemini-1.5-flash-latest
 
 CHAT_RATE_LIMIT_WINDOW_MS=60000
 CHAT_RATE_LIMIT_MAX_REQUESTS=12

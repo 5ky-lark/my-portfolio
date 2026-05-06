@@ -2089,6 +2089,7 @@ textarea:focus-visible {
   /* Keep it moving but calmer for reduced-motion users. */
   .client-marquee-track {
     animation-duration: 80s !important;
+    animation-iteration-count: infinite !important;
   }
 }
 
@@ -2159,25 +2160,31 @@ textarea:focus-visible {
   overflow: hidden;
   mask-image: linear-gradient(to right,
       transparent 0%,
-      black 5%,
-      black 95%,
+      black 1.5%,
+      black 98.5%,
       transparent 100%);
   -webkit-mask-image: linear-gradient(to right,
       transparent 0%,
-      black 5%,
-      black 95%,
+      black 1.5%,
+      black 98.5%,
       transparent 100%);
 }
 
-/* Track holds 4 sets of logos for seamless infinite scroll */
+/* Track holds 2 mirrored groups for seamless loop */
 .client-marquee-track {
   display: flex;
   align-items: center;
-  gap: 4rem;
   width: max-content;
-  animation: marqueeScroll 24s linear infinite;
+  animation: marqueeScroll 30s linear infinite;
   will-change: transform;
-  transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
+}
+
+.client-marquee-group {
+  display: flex;
+  align-items: center;
+  gap: clamp(2rem, 4vw, 4rem);
+  padding-right: clamp(2rem, 4vw, 4rem);
 }
 
 .client-marquee-item {
@@ -2185,41 +2192,48 @@ textarea:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50px;
+  height: 48px;
 }
 
 .client-marquee-logo {
-  height: 40px;
+  height: 34px;
   width: auto;
-  max-width: 150px;
+  max-width: 170px;
   object-fit: contain;
-  opacity: 0.7;
+  opacity: 0.84;
   transition: opacity var(--transition-base), filter var(--transition-base);
-  filter: grayscale(100%);
+  filter: none;
 }
 
 .client-marquee-logo:hover {
   opacity: 1;
-  filter: grayscale(0%);
+}
+
+.client-marquee-logo.logo-compact {
+  max-width: 120px;
+}
+
+.client-marquee-logo.logo-wide {
+  max-width: 185px;
 }
 
 /* Invert logos for dark mode visibility */
-.client-marquee-logo.invert-logo {
-  filter: grayscale(100%) invert(1) brightness(0.8);
+.client-marquee-logo.dark-invert {
+  filter: brightness(0) invert(1);
 }
 
-.client-marquee-logo.invert-logo:hover {
-  filter: invert(1) brightness(1);
+.client-marquee-logo.dark-invert:hover {
+  filter: brightness(0) invert(1);
 }
 
-/* Animation scrolls 25% (one of four logo sets) */
+/* Scroll one full group width (half of track). */
 @keyframes marqueeScroll {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 
   100% {
-    transform: translateX(-25%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
@@ -2244,12 +2258,19 @@ textarea:focus-visible {
   }
 
   .client-marquee-track {
-    gap: 2.5rem;
-    animation-duration: 16s;
+    animation-duration: 24s;
   }
 
   .client-marquee-logo {
-    height: 30px;
+    height: 28px;
+    max-width: 140px;
+  }
+
+  .client-marquee-logo.logo-wide {
+    max-width: 160px;
+  }
+
+  .client-marquee-logo.logo-compact {
     max-width: 100px;
   }
 }

@@ -75,7 +75,7 @@ function Projects() {
     return (
         <section className="section projects" id="projects">
             <div className="container">
-                <div className="section-header">
+                <div className="section-header reveal">
                     <h2 className="section-title">Projects</h2>
                     <p className="section-subtitle">
                         A selection of projects showcasing automation, AI, and scalable systems
@@ -84,7 +84,7 @@ function Projects() {
 
                 <div className="projects-grid">
                     {projects.map((project, index) => (
-                        <div key={index} className="project-card">
+                        <div key={index} className="project-card reveal">
                             <div className="project-header">
                                 <div className="project-icon">
                                     <project.icon size={24} />

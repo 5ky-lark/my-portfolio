@@ -2,32 +2,6 @@ import { useState, useEffect, useRef } from 'react'
 import { MessageSquare, X, Send, Bot } from 'lucide-react'
 import ReactMarkdown from 'react-markdown'
 
-const SYSTEM_PROMPT = `
-You are the AI Assistant for Skylark Magsilang's personal portfolio. Skylark is a Full Stack Developer based in the Philippines, working for 8MB LLC (Zagged) in Delaware, USA.
-
-KEY INFORMATION:
-- Role: Full Stack Developer specializing in automation, AI systems, and scalable web apps.
-- Core Stack: JavaScript, TypeScript, Python, SQL, React, Next.js, Node.js, Flask, PostgreSQL, Docker.
-- Experience: Automation, AI-powered applications, high-performance web solutions.
-- Projects:
-        1. Discord Automation Bots: 30,000+ members, 50+ servers, Python/PostgreSQL.
-  2. Gemini AI Media Generator: Integrates Gemini 3 Pro with Discord, 1,000+ images/week.
-  3. Email Automation System: ~2,000 automated emails daily (~60K/month), 99% uptime, Flask/SMTP, saving ~$300/month.
-  4. TikTok Data Scraper: 100+ profiles/min, 5x faster, reduced memory from 1.8GB to 450MB, Python/Selenium.
-    5. Google Maps Data Scraper: FastAPI + Playwright scraper with website email/phone extraction and CSV/JSON export.
-    6. NEU Library Visitor Log: Next.js 14 + TypeScript system with NEU Google OAuth, role-aware logs, analytics, and Gemini admin assistant.
-
-STYLE:
-- Tone: Professional, fast-paced, result-oriented, helpful, and concise.
-- Goal: Help recruiters and clients learn about Skylark's skills and schedule a meeting or contact him.
-- Call to Action: Encourage them to email skylarkmagsilangsl@gmail.com or check GitHub at github.com/5ky-lark.
-
-CONSTRAINT:
-- Keep answers short and relevant (under 3 sentences usually).
-- If asked about "young", emphasize "result-oriented" and "production-ready" instead.
-- Do NOT make up facts. If unsure, say "I'm not sure, but you can ask Skylark directly."
-`
-
 function ChatWidget() {
     const [isOpen, setIsOpen] = useState(false)
     const [messages, setMessages] = useState([
@@ -36,6 +10,9 @@ function ChatWidget() {
     const [input, setInput] = useState('')
     const [isLoading, setIsLoading] = useState(false)
     const messagesEndRef = useRef(null)
+    const chatTitleId = 'chat-widget-title'
+    const chatStatusId = 'chat-widget-status'
+    const chatInputId = 'chat-widget-input'
 
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -70,7 +47,6 @@ function ChatWidget() {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    system: SYSTEM_PROMPT.trim(),
                     messages: messagesHistory
                 })
             })
@@ -86,22 +62,11 @@ function ChatWidget() {
             setMessages(prev => [...prev, { role: 'model', text: reply }])
         } catch (error) {
             console.error('Chat Error:', error)
-            const errorMessage = error.message || "Unknown error"
+            const errorMessage = error.message || 'Unknown error'
+            let userFriendlyError = 'The assistant is temporarily unavailable. Please try again shortly.'
 
-            let userFriendlyError = "Oops! I encountered an error."
-
-            if (errorMessage.includes("401")) {
-                userFriendlyError = "Error: Invalid API Key. Check your Gemini key."
-            } else if (errorMessage.toLowerCase().includes("not found") || errorMessage.toLowerCase().includes("not supported for generatecontent")) {
-                userFriendlyError = "Error: Gemini model is unavailable. Try again in a moment while fallback models are applied."
-            } else if (errorMessage.includes("429") || errorMessage.toLowerCase().includes("too many requests")) {
+            if (errorMessage.includes('429') || errorMessage.toLowerCase().includes('too many requests')) {
                 userFriendlyError = "You're sending messages too fast. Please wait a few seconds and try again."
-            } else if (errorMessage.includes("403")) {
-                userFriendlyError = "Error: Access Denied. Your key might be restricted."
-            } else if (errorMessage.toLowerCase().includes("quota") || errorMessage.toLowerCase().includes("resource_exhausted")) {
-                userFriendlyError = "Error: Gemini quota reached. Check your Google AI billing/quota."
-            } else {
-                userFriendlyError = `Error: ${errorMessage}`
             }
 
             setMessages(prev => [...prev, { role: 'model', text: userFriendlyError }])
@@ -123,23 +88,29 @@ function ChatWidget() {
             </button>
 
             {/* Chat Window */}
-            <div className={`chat-window ${isOpen ? 'open' : ''}`}>
+            <div
+                className={`chat-window ${isOpen ? 'open' : ''}`}
+                role="dialog"
+                aria-modal="false"
+                aria-labelledby={chatTitleId}
+                aria-describedby={chatStatusId}
+            >
                 <div className="chat-header">
                     <div className="chat-header-info">
                         <div className="chat-avatar">
                             <Bot size={20} />
                         </div>
                         <div>
-                            <h3>Virtual Skylark</h3>
-                            <span className="status-indicator">Online</span>
+                            <h3 id={chatTitleId}>Virtual Skylark</h3>
+                            <span id={chatStatusId} className="status-indicator">Online</span>
                         </div>
                     </div>
-                    <button onClick={() => setIsOpen(false)} className="chat-close">
+                    <button onClick={() => setIsOpen(false)} className="chat-close" aria-label="Close chat">
                         <X size={20} />
                     </button>
                 </div>
 
-                <div className="chat-messages">
+                <div className="chat-messages" role="log" aria-live="polite" aria-relevant="additions text">
                     {messages.map((msg, idx) => (
                         <div key={idx} className={`chat-message ${msg.role}`}>
                             <div className="message-content">
@@ -158,14 +129,16 @@ function ChatWidget() {
                 </div>
 
                 <form onSubmit={handleSend} className="chat-input-area">
+                    <label htmlFor={chatInputId} className="sr-only">Type your message</label>
                     <input
+                        id={chatInputId}
                         type="text"
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
                         placeholder="Ask me anything..."
                         disabled={isLoading}
                     />
-                    <button type="submit" disabled={isLoading || !input.trim()}>
+                    <button type="submit" disabled={isLoading || !input.trim()} aria-label="Send message">
                         <Send size={18} />
                     </button>
                 </form>

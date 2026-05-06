@@ -10,28 +10,23 @@ function Hero() {
             </div>
 
             <div className="hero-content">
-                <div className="hero-profile-container">
+                <div className="hero-profile-container reveal">
                     <img src="/profile.jpg" alt="Skylark Magsilang" className="hero-profile-img" />
                 </div>
 
-                <div className="hero-badge">
-                    <span className="hero-badge-dot"></span>
-                    Let's build something
-                </div>
-
-                <h1 className="hero-title">
+                <h1 className="hero-title reveal">
                     <span className="hero-name">Skylark Magsilang</span>
                 </h1>
 
-                <p className="hero-subtitle">
+                <p className="hero-subtitle reveal">
                     Full Stack Developer
                 </p>
 
-                <p className="hero-description">
+                <p className="hero-description reveal">
                     Full-stack developer focused on automation and efficiency, leveraging AI to streamline workflows
                 </p>
 
-                <div className="hero-buttons">
+                <div className="hero-buttons reveal">
                     <a href="/assets/docs/resume.pdf" download="SKYLARK_MAGSILANG_CV.pdf" className="btn btn-primary">
                         <Download size={20} />
                         Download CV

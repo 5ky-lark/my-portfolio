@@ -1,11 +1,9 @@
 import { Github, Mail, Facebook, Linkedin } from 'lucide-react'
 
 function Footer() {
-    const currentYear = new Date().getFullYear()
-
     return (
         <footer className="footer">
-            <div className="footer-content">
+            <div className="footer-content reveal">
                 <div className="footer-links">
                     <a
                         href="https://github.com/5ky-lark"
@@ -47,7 +45,7 @@ function Footer() {
                     Designed & Built with 💙 by <span>Skylark Magsilang</span>
                 </p>
                 <p className="footer-copyright">
-                    © {currentYear} — All rights reserved. Ship fast, break nothing.
+                    © 2025 — All rights reserved. Ship fast, break nothing.
                 </p>
             </div>
         </footer>

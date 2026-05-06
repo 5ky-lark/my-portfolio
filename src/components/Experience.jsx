@@ -37,7 +37,7 @@ function Experience() {
     return (
         <section className="section" id="experience">
             <div className="container">
-                <div className="section-header">
+                <div className="section-header reveal">
                     <h2 className="section-title">Experience</h2>
                     <p className="section-subtitle">
                         My professional journey and the impact I've made
@@ -46,7 +46,7 @@ function Experience() {
 
                 <div className="experience-timeline">
                     {experiences.map((exp, index) => (
-                        <div key={index} className="experience-item">
+                        <div key={index} className="experience-item reveal">
                             <div className="experience-dot"></div>
                             <div className="experience-card">
                                 <div className="experience-header">
@@ -68,7 +68,7 @@ function Experience() {
                     ))}
 
                     {education.map((edu, index) => (
-                        <div key={index} className="experience-item">
+                        <div key={index} className="experience-item reveal">
                             <div className="experience-dot"></div>
                             <div className="experience-card">
                                 <div className="experience-header">

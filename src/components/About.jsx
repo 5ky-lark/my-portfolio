@@ -4,8 +4,9 @@ const techStack = {
     languages: ['JavaScript', 'TypeScript', 'Python', 'SQL'],
     frontend: ['React', 'Next.js', 'Vite', 'Tailwind CSS'],
     backend: ['Node.js', 'Express.js', 'Flask', 'FastAPI'],
-    database: ['PostgreSQL', 'SQLite', 'Supabase'],
-    devops: ['Docker', 'Railway', 'Render', 'Vercel'],
+    database: ['PostgreSQL', 'SQLite', 'Supabase', 'MongoDB'],
+    devops: ['Docker', 'Railway', 'Render', 'Vercel', 'Cloudflare', 'CI/CD', 'Cron Jobs'],
+    aiTools: ['Cursor', 'Antigravity', 'GitHub Copilot'],
 }
 
 const stats = [
@@ -70,7 +71,7 @@ function About() {
         <section className="section about" id="about">
             <div className="container">
                 <div className="about-content">
-                    <div className="about-text">
+                    <div className="about-text reveal reveal-left">
                         <h3>About Me</h3>
                         <h2>Building systems that scale</h2>
                         <p>
@@ -84,7 +85,7 @@ function About() {
                         </div>
                     </div>
 
-                    <div className="about-tech">
+                    <div className="about-tech reveal reveal-right">
                         <h4>Tech Stack</h4>
 
                         <div className="tech-category">
@@ -118,6 +119,15 @@ function About() {
                             <div className="tech-category-label">Database & DevOps</div>
                             <div className="tech-grid">
                                 {[...techStack.database, ...techStack.devops].map(tech => (
+                                    <div key={tech} className="tech-item">{tech}</div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="tech-category">
+                            <div className="tech-category-label">AI & Developer Tools</div>
+                            <div className="tech-grid">
+                                {techStack.aiTools.map(tech => (
                                     <div key={tech} className="tech-item">{tech}</div>
                                 ))}
                             </div>

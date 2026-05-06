@@ -7,10 +7,14 @@ const ClientMarquee = () => {
     const logos = [
         { src: '/marquee/690ceb7cbb41e489c9bdd3d6_1906-New Straight Logo_black lg.png', alt: '1906' },
         { src: '/marquee/691342bb7a7f54f8dd37fea8_logo1.svg', alt: 'Delta' },
+        { src: '/marquee/691342bbc5c41e9eaa14cf2a_logo3.svg', alt: 'Hostage Tape' },
         { src: '/marquee/691342bb8f700a0d8b4e196b_logo7.svg', alt: 'Client' },
         { src: '/marquee/691342bbaa6af3703a71ec75_logo12.svg', alt: 'Pacagen' },
         { src: '/marquee/691342bbbd02a0da554174e9_logo8.svg', alt: 'Graymatter' },
         { src: '/marquee/691342bbdc1b17f80ca52a3f_logo11.svg', alt: 'Manuka Health' },
+        { src: '/marquee/698e1cd9669f7baa0beea6c1_topicals.svg', alt: 'Topicals' },
+        { src: '/marquee/698e1cd962c4c23d1b3a63cf_gopure.svg', alt: 'goPure' },
+        { src: '/marquee/698e1cd9b3f25b0d1aa6fc58_love-wellness.svg', alt: 'Love Wellness' },
     ]
 
     useEffect(() => {

@@ -6,6 +6,7 @@ function Contact() {
         name: '',
         email: '',
         message: '',
+        website: '',
     })
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [isSubmitted, setIsSubmitted] = useState(false)
@@ -19,6 +20,8 @@ function Contact() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        if (formData.website) return
+
         setIsSubmitting(true)
 
         try {
@@ -32,7 +35,7 @@ function Contact() {
 
             if (response.ok) {
                 setIsSubmitted(true)
-                setFormData({ name: '', email: '', message: '' })
+                setFormData({ name: '', email: '', message: '', website: '' })
             }
         } catch (error) {
             console.error('Error submitting form:', error)
@@ -122,6 +125,7 @@ function Contact() {
                                         placeholder="Your name"
                                         value={formData.name}
                                         onChange={handleChange}
+                                        maxLength={100}
                                         required
                                     />
                                 </div>
@@ -136,7 +140,21 @@ function Contact() {
                                         placeholder="your.email@example.com"
                                         value={formData.email}
                                         onChange={handleChange}
+                                        maxLength={254}
                                         required
+                                    />
+                                </div>
+
+                                <div className="form-honeypot" aria-hidden="true">
+                                    <label htmlFor="website">Website</label>
+                                    <input
+                                        type="text"
+                                        id="website"
+                                        name="website"
+                                        tabIndex="-1"
+                                        autoComplete="off"
+                                        value={formData.website}
+                                        onChange={handleChange}
                                     />
                                 </div>
 
@@ -149,6 +167,7 @@ function Contact() {
                                         placeholder="Tell me about your project..."
                                         value={formData.message}
                                         onChange={handleChange}
+                                        maxLength={1500}
                                         required
                                     />
                                 </div>

@@ -22,16 +22,16 @@ const projects = [
         tech: ['React', 'Gemini API', 'Discord.js', 'Node.js'],
     },
     {
-        title: 'Email Automation System',
-        description: 'Automated email web app that replaced manual sending with intelligent automation, reducing workload and SaaS costs.',
-        icon: Mail,
+        title: 'Web PoC Reporter',
+        description: 'Web vulnerability scanner and PoC reporter with reproducible evidence, real-time scan progress, triage workflow, scan diffing, and multi-format exports.',
+        icon: Search,
         metrics: [
-            { icon: TrendingUp, label: '60,000 emails/month' },
-            { icon: Clock, label: '99% uptime' },
-            { icon: Zap, label: '$300/mo saved' },
+            { icon: Lock, label: 'Multi-module vuln scanning' },
+            { icon: Zap, label: 'WebSocket live progress' },
+            { icon: TrendingUp, label: 'SARIF/JSON/CSV/MD/PDF exports' },
         ],
-        tech: ['Flask', 'SMTP', 'PostgreSQL', 'Render'],
-        github: 'https://github.com/5ky-lark/email-automation-smtp',
+        tech: ['FastAPI', 'SQLite', 'Vite', 'Vanilla JavaScript', 'WebSocket', 'SARIF'],
+        github: 'https://github.com/5ky-lark/Web-PoC-reporter'
     },
     {
         title: 'TikTok Data Scraper',

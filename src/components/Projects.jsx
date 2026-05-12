@@ -6,8 +6,8 @@ const projects = [
         description: 'Built and scaled customized automation bots to automate workflows and reduce manual operational effort across multiple Discord servers.',
         icon: Bot,
         metrics: [
-            { icon: Users, label: '30,000+ members' },
-            { icon: Zap, label: '50+ servers' },
+            { icon: Users, label: '40,000+ members' },
+            { icon: Zap, label: '60+ servers' },
         ],
         tech: ['Discord.py', 'Discord.js', 'Python', 'PostgreSQL', 'Docker'],
     },

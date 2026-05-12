@@ -5,7 +5,7 @@ const experiences = [
         location: 'Remote (New York, USA)',
         date: 'June 2025 - Present',
         description: [
-            <>Developed and scaled customized automation bots across <strong>50+ Discord servers (30,000+ members)</strong> for U.S. brands to manage onboarding, moderation, account setup, video submissions, payment submissions, and content checks of content creators, significantly reducing manual operations.</>,
+            <>Developed and scaled customized automation bots across <strong>60+ Discord servers (40,000+ members)</strong> for U.S. brands to manage onboarding, moderation, account setup, video submissions, payment submissions, and content checks of content creators, significantly reducing manual operations.</>,
             <>Built an internal automation tool for email outreach and TikTok/Reddit scraping, scaling to over <strong>60,000 emails/month</strong> reducing SaaS costs, and enabling onboarding of over <strong>1,500 UGC creators</strong>.</>,
             <>Developed a web application for the content lead, integrating Gemini with Discord bots to automate creator media generation and reducing SaaS costs by <strong>60–70%</strong>.</>,
             <>Built a scraping-based tool for brand managers to automate counting of creator posts across social media, processing over <strong>100,000 posts/month</strong> and eliminating manual reporting.</>,

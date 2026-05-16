@@ -27,7 +27,7 @@ function Hero() {
                 </p>
 
                 <div className="hero-buttons reveal">
-                    <a href="/assets/docs/SKYLARK MAGSILANG CV.pdf" download="SKYLARK MAGSILANG CV.pdf" className="btn btn-primary">
+                    <a href="/assets/docs/SKYLARK%20MAGSILANG%20CV.pdf" download="SKYLARK MAGSILANG CV.pdf" className="btn btn-primary">
                         <Download size={20} />
                         Download CV
                     </a>

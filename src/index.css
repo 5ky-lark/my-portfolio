@@ -636,17 +636,17 @@ a:hover {
     left: 50%;
     right: auto;
     transform: translateX(-50%);
-    width: min(23.5rem, calc(100vw - 1rem));
-    padding: 0.45rem 0.55rem;
+    width: min(22rem, calc(100vw - 1.75rem));
+    padding: 0.5rem 0.85rem;
     min-width: 0;
   }
 
   .navbar.scrolled {
-    padding: 0.45rem 0.55rem;
+    padding: 0.5rem 0.85rem;
   }
 
   .navbar-content {
-    gap: 0.4rem;
+    gap: 0.55rem;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -665,7 +665,7 @@ a:hover {
 
   .navbar-links {
     display: flex;
-    gap: 0.2rem;
+    gap: 0.25rem;
     flex: 1;
     justify-content: center;
     align-items: center;
@@ -689,16 +689,16 @@ a:hover {
   .navbar-links a {
     flex: 1;
     text-align: center;
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     letter-spacing: 0.02em;
-    padding: 0.6rem 0.6rem;
+    padding: 0.5rem 0.45rem;
     border-radius: var(--radius-full);
     color: var(--text-secondary);
     white-space: nowrap;
     text-transform: none;
     font-weight: 700;
     line-height: 1.2;
-    min-height: 44px;
+    min-height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2258,7 +2258,7 @@ textarea:focus-visible {
   }
 
   .client-marquee-track {
-    animation-duration: 24s;
+    animation-duration: 18s;
   }
 
   .client-marquee-logo {

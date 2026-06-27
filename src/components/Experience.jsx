@@ -29,7 +29,7 @@ const education = [
     {
         title: 'Bachelor of Science in Information Technology',
         company: 'New Era University',
-        date: 'Expected June 2026',
+        date: 'June 2026',
         description: [],
     },
 ]

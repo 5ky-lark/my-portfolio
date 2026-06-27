@@ -1,25 +1,26 @@
 const experiences = [
     {
-        title: 'Software Developer (Full-time)',
+        title: 'Software Developer',
         company: '8MB LLC (Zagged)',
-        location: 'Remote (New York, USA)',
+        location: 'New York, USA | Remote',
         date: 'June 2025 - Present',
         description: [
-            <>Developed and scaled customized automation bots across <strong>60+ Discord servers (40,000+ members)</strong> for U.S. brands to manage onboarding, moderation, account setup, video submissions, payment submissions, and content checks of content creators, significantly reducing manual operations.</>,
-            <>Built an internal automation tool for email outreach and TikTok/Reddit scraping, scaling to over <strong>60,000 emails/month</strong> reducing SaaS costs, and enabling onboarding of over <strong>1,500 UGC creators</strong>.</>,
-            <>Developed a web application for the content lead, integrating Gemini with Discord bots to automate creator media generation and reducing SaaS costs by <strong>60–70%</strong>.</>,
-            <>Built a scraping-based tool for brand managers to automate counting of creator posts across social media, processing over <strong>100,000 posts/month</strong> and eliminating manual reporting.</>,
+            <>Developed and scaled automation bots across <strong>70+ Discord servers (40,000+ members)</strong> for <strong>7-9 figures</strong> U.S. brands, automating onboarding, moderation, payment submissions, and creator workflows.</>,
+            <>Built and operated an internal outreach email automation platform with TikTok and Reddit scraping, Google SMTP, and anti-bot measures to maximize inbox deliverability, scaling outreach to <strong>60,000+ emails/month</strong>, helping onboard <strong>1,500+ UGC creators</strong>, and reducing SaaS costs.</>,
+            <>Optimized and scaled a full-stack CRUD content library platform serving <strong>5,000+ monthly visits</strong>, implementing CDN caching, WebP compression, lazy loading, and asset prefetching to achieve <strong>1.27s page load times</strong> while reducing cloud egress costs.</>,
+            <>Developed an internal media generation platform integrating Gemini and ChatGPT APIs with Discord bots, reducing SaaS costs by <strong>50%</strong> through optimized API request batching.</>,
+            <>Built a concurrent video downloader processing <strong>100K+ TikTok/YouTube URLs</strong> per month across <strong>30 async workers</strong> with persistent pause/resume job tracking, automated anti-rate-limit backoff and auto-organized file output, achieving <strong>~30x faster</strong> bulk downloads for client delivery.</>,
         ],
     },
     {
-        title: 'Web Developer (Part-time)',
+        title: 'Full Stack Developer',
         company: 'TaxFirmSystems',
-        location: 'Remote (Florida, USA)',
+        location: 'Florida, USA | Remote',
         date: 'January 2026 - Present',
         description: [
-            <>Strengthened security and data quality of dashboard through role-based permissions, password recovery, email verification, rate limiting, and sanitized webhook ingestion.</>,
-            <>Improved client onboarding funnel by building trial signup and verification systems, converting over <strong>5,000 website visits</strong> into over <strong>100 qualified signup leads</strong>, tracked via a custom admin dashboard/CRM.</>,
-            <>Automated lead delivery and assignment through dashboard authenticating webhook APIs, validation, sanitization, and email notifications, reducing manual handling and speeding up lead distribution.</>,
+            <>Built a full-stack B2B SaaS lead generation platform using Next.js 16, TypeScript, React 19, and MongoDB with API routes enabling lead acquisition for <strong>70+ tax relief firms</strong>.</>,
+            <>Engineered an automated sales pipeline integrating Stripe (with idempotent processing), Calendly, Discord webhook, QStash, and an 8-template drip email sequence, <strong>reducing manual follow-up to 0%</strong>.</>,
+            <>Implemented server-side Meta Conversions API with event deduplication to maximize lead quality, powering an ad funnel that generated <strong>200+ tax relief firms leads</strong> nationwide.</>,
         ],
     },
 ]

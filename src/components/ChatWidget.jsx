@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown'
 function ChatWidget() {
     const [isOpen, setIsOpen] = useState(false)
     const [messages, setMessages] = useState([
-        { role: 'model', text: "Hi! I'm Skylark's AI Assistant. Ask me about his projects, skills, or how to hire him!" }
+        { role: 'model', text: "Hi! I'm Skylark's AI Assistant. Ask me about his experience, skills, or how to hire him!" }
     ])
     const [input, setInput] = useState('')
     const [isLoading, setIsLoading] = useState(false)

@@ -5,7 +5,6 @@ import Hero from './components/Hero'
 import ClientMarquee from './components/ClientMarquee'
 import About from './components/About'
 import Experience from './components/Experience'
-import Projects from './components/Projects'
 import Footer from './components/Footer'
 import ChatWidget from './components/ChatWidget'
 
@@ -65,7 +64,6 @@ function App() {
                 <ClientMarquee />
                 <About />
                 <Experience />
-                <Projects />
             </main>
             <Footer />
             <ChatWidget />

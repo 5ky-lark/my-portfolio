@@ -23,7 +23,7 @@ function Hero() {
                 </p>
 
                 <p className="hero-description reveal">
-                    Full-stack developer focused on automation and efficiency, leveraging AI to streamline workflows
+                    Focused on automation and efficiency, leveraging AI to streamline workflows
                 </p>
 
                 <div className="hero-buttons reveal">

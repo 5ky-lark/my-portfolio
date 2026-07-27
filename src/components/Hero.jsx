@@ -19,7 +19,7 @@ function Hero() {
                 </h1>
 
                 <p className="hero-subtitle reveal">
-                    Full Stack Developer
+                    Software Engineer | AI Engineer
                 </p>
 
                 <p className="hero-description reveal">

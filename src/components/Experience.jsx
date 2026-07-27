@@ -1,6 +1,6 @@
 const experiences = [
     {
-        title: 'Software Developer',
+        title: 'Software Engineer',
         company: '8MB LLC (Zagged)',
         location: 'New York, USA | Remote',
         date: 'June 2025 - Present',
